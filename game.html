@@ -1,0 +1,90 @@
+{
+  "id": "pine-forest",
+  "name": "Mediterranean Pine Forest",
+  "tagline": "Iberian Peninsula · Fire-adapted woodland",
+  "emoji": "🌲",
+  "palette": { "primary": "#3D2B1F", "accent": "#D4A843", "surface": "#4A6741" },
+  "environmental_factors": [
+    { "id": "rainfall",    "emoji": "🌧️", "label": "Seasonal Rainfall",  "role": "water source" },
+    { "id": "dry_summer",  "emoji": "☀️", "label": "Dry Summer Climate", "role": "seasonal driver" },
+    { "id": "rocky_soil",  "emoji": "🪨", "label": "Rocky Soil",         "role": "substrate" },
+    { "id": "fire_regime", "emoji": "🔥", "label": "Fire Cycle",         "role": "renewal mechanism" },
+    { "id": "sunlight",    "emoji": "🌤️", "label": "Sunlight",           "role": "energy source" },
+    { "id": "groundwater", "emoji": "💧", "label": "Groundwater",        "role": "water source" },
+    { "id": "leaf_litter", "emoji": "🍂", "label": "Leaf Litter",        "role": "nutrient layer" }
+  ],
+  "species": [
+    {
+      "id": "aleppo_pine", "emoji": "🌲", "label": "Aleppo Pine", "role": "keystone tree",
+      "dependencies": ["rainfall","rocky_soil","fire_regime","sunlight","dry_summer","mycorrhizal_fungi","leaf_litter"]
+    },
+    {
+      "id": "holm_oak", "emoji": "🌳", "label": "Holm Oak", "role": "canopy tree",
+      "dependencies": ["rainfall","groundwater","rocky_soil","sunlight","wild_boar","mycorrhizal_fungi","leaf_litter"]
+    },
+    {
+      "id": "strawberry_tree", "emoji": "🍓", "label": "Strawberry Tree", "role": "understorey shrub",
+      "dependencies": ["rainfall","rocky_soil","sunlight","honeybee","thrush","leaf_litter"]
+    },
+    {
+      "id": "rosemary", "emoji": "🌿", "label": "Rosemary", "role": "aromatic shrub",
+      "dependencies": ["dry_summer","rocky_soil","sunlight","honeybee","fire_regime"]
+    },
+    {
+      "id": "cistus", "emoji": "🌸", "label": "Cistus (Rock Rose)", "role": "pioneer shrub",
+      "dependencies": ["fire_regime","rocky_soil","sunlight","dry_summer","honeybee"]
+    },
+    {
+      "id": "mycorrhizal_fungi", "emoji": "🍄", "label": "Mycorrhizal Fungi", "role": "soil network",
+      "dependencies": ["aleppo_pine","holm_oak","leaf_litter","groundwater","rocky_soil"]
+    },
+    {
+      "id": "honeybee", "emoji": "🐝", "label": "Honeybee", "role": "pollinator",
+      "dependencies": ["rosemary","cistus","strawberry_tree","sunlight","rainfall"]
+    },
+    {
+      "id": "red_deer", "emoji": "🦌", "label": "Red Deer", "role": "large herbivore",
+      "dependencies": ["aleppo_pine","holm_oak","strawberry_tree","rosemary","groundwater","wolf"]
+    },
+    {
+      "id": "wild_boar", "emoji": "🐗", "label": "Wild Boar", "role": "omnivore / rooter",
+      "dependencies": ["holm_oak","mycorrhizal_fungi","leaf_litter","groundwater","rainfall"]
+    },
+    {
+      "id": "wolf", "emoji": "🐺", "label": "Wolf", "role": "apex predator",
+      "dependencies": ["red_deer","wild_boar","groundwater","aleppo_pine"]
+    },
+    {
+      "id": "golden_eagle", "emoji": "🦅", "label": "Golden Eagle", "role": "aerial predator",
+      "dependencies": ["rabbit","red_deer","sunlight","aleppo_pine","rocky_soil"]
+    },
+    {
+      "id": "rabbit", "emoji": "🐇", "label": "European Rabbit", "role": "prey species",
+      "dependencies": ["cistus","rosemary","leaf_litter","rocky_soil","rainfall"]
+    },
+    {
+      "id": "red_fox", "emoji": "🦊", "label": "Red Fox", "role": "mesopredator",
+      "dependencies": ["rabbit","mycorrhizal_fungi","aleppo_pine","leaf_litter","groundwater"]
+    },
+    {
+      "id": "black_vulture", "emoji": "🪶", "label": "Black Vulture", "role": "scavenger",
+      "dependencies": ["red_deer","wild_boar","wolf","aleppo_pine","sunlight"]
+    },
+    {
+      "id": "thrush", "emoji": "🐦", "label": "Song Thrush", "role": "seed disperser",
+      "dependencies": ["strawberry_tree","cistus","honeybee","rainfall","leaf_litter"]
+    },
+    {
+      "id": "gecko", "emoji": "🦎", "label": "Turkish Gecko", "role": "insect predator",
+      "dependencies": ["rocky_soil","dry_summer","fire_regime","honeybee","leaf_litter"]
+    },
+    {
+      "id": "millipede", "emoji": "🐛", "label": "Millipede", "role": "decomposer",
+      "dependencies": ["leaf_litter","rainfall","groundwater","mycorrhizal_fungi"]
+    },
+    {
+      "id": "short_toed_eagle", "emoji": "🦉", "label": "Short-toed Eagle", "role": "reptile predator",
+      "dependencies": ["gecko","sunlight","aleppo_pine","rocky_soil","rabbit"]
+    }
+  ]
+}
