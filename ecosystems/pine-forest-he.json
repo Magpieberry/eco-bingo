@@ -1,0 +1,90 @@
+{
+  "id": "pine-forest-he",
+  "name": "יער אורנים ים-תיכוני",
+  "tagline": "חצי האי האיברי · יער מותאם לאש",
+  "emoji": "🌲",
+  "palette": { "primary": "#3D2B1F", "accent": "#D4A843", "surface": "#4A6741" },
+  "environmental_factors": [
+    { "id": "rainfall",    "emoji": "🌧️", "label": "גשמי עונה",       "role": "מקור מים" },
+    { "id": "dry_summer",  "emoji": "☀️", "label": "קיץ יבש",         "role": "מניע עונתי" },
+    { "id": "rocky_soil",  "emoji": "🪨", "label": "קרקע סלעית",      "role": "סובסטרט" },
+    { "id": "fire_regime", "emoji": "🔥", "label": "מחזור שריפות",    "role": "מנגנון התחדשות" },
+    { "id": "sunlight",    "emoji": "🌤️", "label": "אור שמש",         "role": "מקור אנרגיה" },
+    { "id": "groundwater", "emoji": "💧", "label": "מי תהום",         "role": "מקור מים" },
+    { "id": "leaf_litter", "emoji": "🍂", "label": "שכבת עלים נושרים","role": "שכבת חומרים מזינים" }
+  ],
+  "species": [
+    {
+      "id": "aleppo_pine", "emoji": "🌲", "label": "אורן ירושלים", "role": "עץ מפתח",
+      "dependencies": ["rainfall","rocky_soil","fire_regime","sunlight","dry_summer","mycorrhizal_fungi","leaf_litter"]
+    },
+    {
+      "id": "holm_oak", "emoji": "🌳", "label": "אלון מצוי", "role": "עץ מרכזי",
+      "dependencies": ["rainfall","groundwater","rocky_soil","sunlight","wild_boar","mycorrhizal_fungi","leaf_litter"]
+    },
+    {
+      "id": "strawberry_tree", "emoji": "🍓", "label": "קטלב מצוי", "role": "שיח תת-יערי",
+      "dependencies": ["rainfall","rocky_soil","sunlight","honeybee","thrush","leaf_litter"]
+    },
+    {
+      "id": "rosemary", "emoji": "🌿", "label": "רוזמרין", "role": "שיח ריחני",
+      "dependencies": ["dry_summer","rocky_soil","sunlight","honeybee","fire_regime"]
+    },
+    {
+      "id": "cistus", "emoji": "🌸", "label": "לדנית (ורד הסלע)", "role": "שיח חלוץ",
+      "dependencies": ["fire_regime","rocky_soil","sunlight","dry_summer","honeybee"]
+    },
+    {
+      "id": "mycorrhizal_fungi", "emoji": "🍄", "label": "פטריות מיקוריזה", "role": "רשת קרקע",
+      "dependencies": ["aleppo_pine","holm_oak","leaf_litter","groundwater","rocky_soil"]
+    },
+    {
+      "id": "honeybee", "emoji": "🐝", "label": "דבורת דבש", "role": "מאביק",
+      "dependencies": ["rosemary","cistus","strawberry_tree","sunlight","rainfall"]
+    },
+    {
+      "id": "red_deer", "emoji": "🦌", "label": "אייל אצילי", "role": "אוכל עשב גדול",
+      "dependencies": ["aleppo_pine","holm_oak","strawberry_tree","rosemary","groundwater","wolf"]
+    },
+    {
+      "id": "wild_boar", "emoji": "🐗", "label": "חזיר בר", "role": "כל-אוכל / חופר",
+      "dependencies": ["holm_oak","mycorrhizal_fungi","leaf_litter","groundwater","rainfall"]
+    },
+    {
+      "id": "wolf", "emoji": "🐺", "label": "זאב", "role": "טורף עיקרי",
+      "dependencies": ["red_deer","wild_boar","groundwater","aleppo_pine"]
+    },
+    {
+      "id": "golden_eagle", "emoji": "🦅", "label": "עיט זהוב", "role": "טורף אווירי",
+      "dependencies": ["rabbit","red_deer","sunlight","aleppo_pine","rocky_soil"]
+    },
+    {
+      "id": "rabbit", "emoji": "🐇", "label": "ארנבת אירופאית", "role": "מין טרף",
+      "dependencies": ["cistus","rosemary","leaf_litter","rocky_soil","rainfall"]
+    },
+    {
+      "id": "red_fox", "emoji": "🦊", "label": "שועל אדום", "role": "טורף ביניים",
+      "dependencies": ["rabbit","mycorrhizal_fungi","aleppo_pine","leaf_litter","groundwater"]
+    },
+    {
+      "id": "black_vulture", "emoji": "🪶", "label": "נשר שחור", "role": "נבלן",
+      "dependencies": ["red_deer","wild_boar","wolf","aleppo_pine","sunlight"]
+    },
+    {
+      "id": "thrush", "emoji": "🐦", "label": "שחרור מצוי", "role": "מפזר זרעים",
+      "dependencies": ["strawberry_tree","cistus","honeybee","rainfall","leaf_litter"]
+    },
+    {
+      "id": "gecko", "emoji": "🦎", "label": "גקו טורקי", "role": "טורף חרקים",
+      "dependencies": ["rocky_soil","dry_summer","fire_regime","honeybee","leaf_litter"]
+    },
+    {
+      "id": "millipede", "emoji": "🐛", "label": "נדל", "role": "מפרק",
+      "dependencies": ["leaf_litter","rainfall","groundwater","mycorrhizal_fungi"]
+    },
+    {
+      "id": "short_toed_eagle", "emoji": "🦉", "label": "עיט קצר-בהונות", "role": "טורף זוחלים",
+      "dependencies": ["gecko","sunlight","aleppo_pine","rocky_soil","rabbit"]
+    }
+  ]
+}

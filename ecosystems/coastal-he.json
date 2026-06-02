@@ -1,0 +1,90 @@
+{
+  "id": "coastal-he",
+  "name": "חוף ים-תיכוני",
+  "tagline": "חוף סלעי, מרעות עשב ים ומים פתוחים",
+  "emoji": "🌊",
+  "palette": { "primary": "#0d2b3e", "accent": "#5bb8d4", "surface": "#1a5c6e" },
+  "environmental_factors": [
+    { "id": "sunlight",        "emoji": "🌤️", "label": "אור שמש",          "role": "מקור אנרגיה" },
+    { "id": "seawater",        "emoji": "🌊", "label": "מי ים",            "role": "מדיום בית גידול" },
+    { "id": "wave_action",     "emoji": "💦", "label": "פעילות גלים",      "role": "עיצוב בית גידול" },
+    { "id": "nutrients",       "emoji": "🧪", "label": "עליית מים עשירים", "role": "דשן" },
+    { "id": "rocky_substrate", "emoji": "🪨", "label": "קרקעית סלעית",    "role": "משטח עיגון" },
+    { "id": "sandy_seabed",    "emoji": "🏖️", "label": "קרקעית חולית",   "role": "סובסטרט חפירה" },
+    { "id": "water_temp",      "emoji": "🌡️", "label": "טמפרטורת המים",  "role": "מווסת תרמי" }
+  ],
+  "species": [
+    {
+      "id": "posidonia", "emoji": "🌱", "label": "עשב ים פוסידוניה", "role": "מין יסוד",
+      "dependencies": ["sunlight","seawater","sandy_seabed","nutrients","water_temp","sea_urchin"]
+    },
+    {
+      "id": "coralline_algae", "emoji": "🪸", "label": "אצות מאבנות", "role": "בונה שונית",
+      "dependencies": ["sunlight","seawater","rocky_substrate","nutrients","water_temp"]
+    },
+    {
+      "id": "neptune_grass", "emoji": "🌿", "label": "עשב נפטון", "role": "מין עשב ים",
+      "dependencies": ["sunlight","sandy_seabed","seawater","nutrients","water_temp"]
+    },
+    {
+      "id": "sea_urchin", "emoji": "🦔", "label": "קיפוד ים", "role": "רועה",
+      "dependencies": ["coralline_algae","posidonia","rocky_substrate","seawater"]
+    },
+    {
+      "id": "octopus", "emoji": "🐙", "label": "תמנון", "role": "טורף קרקעי",
+      "dependencies": ["rocky_substrate","sea_urchin","crab","seawater","posidonia"]
+    },
+    {
+      "id": "crab", "emoji": "🦀", "label": "סרטן חוף", "role": "נבלן / רועה",
+      "dependencies": ["rocky_substrate","wave_action","coralline_algae","seawater","sandy_seabed"]
+    },
+    {
+      "id": "anchovy", "emoji": "🐟", "label": "אנשובי אירופאי", "role": "דג מזון",
+      "dependencies": ["nutrients","seawater","water_temp","posidonia","zooplankton"]
+    },
+    {
+      "id": "zooplankton", "emoji": "🔬", "label": "זואופלנקטון", "role": "צרכן זעיר",
+      "dependencies": ["nutrients","sunlight","seawater","water_temp","phytoplankton"]
+    },
+    {
+      "id": "phytoplankton", "emoji": "🌿", "label": "פיטופלנקטון", "role": "יצרן ראשוני",
+      "dependencies": ["sunlight","nutrients","seawater","water_temp"]
+    },
+    {
+      "id": "sea_bream", "emoji": "🐠", "label": "דניס", "role": "טורף ביניים",
+      "dependencies": ["sea_urchin","anchovy","posidonia","seawater","zooplankton"]
+    },
+    {
+      "id": "grouper", "emoji": "🐡", "label": "לברק כהה", "role": "טורף דגים עיקרי",
+      "dependencies": ["sea_bream","octopus","anchovy","rocky_substrate","posidonia"]
+    },
+    {
+      "id": "loggerhead_turtle", "emoji": "🐢", "label": "צב ים לוגרהד", "role": "מגה-פאונה",
+      "dependencies": ["jellyfish","sea_urchin","posidonia","seawater","sandy_seabed","water_temp"]
+    },
+    {
+      "id": "jellyfish", "emoji": "🪼", "label": "מדוזה", "role": "טורף ג'לטיני",
+      "dependencies": ["zooplankton","seawater","water_temp","phytoplankton"]
+    },
+    {
+      "id": "mussel", "emoji": "🐚", "label": "מצדף ים-תיכוני", "role": "מסנן מזון",
+      "dependencies": ["rocky_substrate","wave_action","phytoplankton","seawater","nutrients"]
+    },
+    {
+      "id": "limpet", "emoji": "🐌", "label": "פטלית", "role": "רועה",
+      "dependencies": ["rocky_substrate","wave_action","coralline_algae","seawater"]
+    },
+    {
+      "id": "yellow_legged_gull", "emoji": "🐦", "label": "שחף צהוב-רגליים", "role": "נבלן חופי",
+      "dependencies": ["anchovy","crab","mussel","limpet","seawater"]
+    },
+    {
+      "id": "shag", "emoji": "🦅", "label": "קורמורן מצוי", "role": "ציפור צוללת",
+      "dependencies": ["anchovy","sea_bream","rocky_substrate","seawater","sunlight"]
+    },
+    {
+      "id": "bottlenose_dolphin", "emoji": "🐬", "label": "דולפין מצוי", "role": "יונק עיקרי",
+      "dependencies": ["anchovy","sea_bream","grouper","seawater","water_temp"]
+    }
+  ]
+}
